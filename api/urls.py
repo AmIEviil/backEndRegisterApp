@@ -11,6 +11,12 @@ urlpatterns =[
     url(r'^api/persona_crear/$',views.PersonaViewCreateSet.as_view()),
     url(r'^api/persona_api/$',views.PersonaApi),
     url(r'^api/persona_apii/(?P<id>.+)/$',views.PersonaApi),
+    url(r'^api/profesor/$',views.ProfesorAPI),
+    url(r'^api/profe_curso/(?P<rutp>.+)$',views.CursoProfesorBuscarViewSet.as_view()),
+    url(r'^api/alumno/(?P<id>.+)$',views.AlumnoAPI),
+    url(r'^api/asistencia/$',views.AsistenciaViewSet.as_view()),
+    url(r'^api/asistencia_l/$',views.AsistenciaListarViewSet.as_view()),
+    url(r'^api/conteo/$',views.conteo_asistencias),
 ]
 
 urlpatterns= format_suffix_patterns(urlpatterns)
