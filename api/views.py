@@ -1,3 +1,4 @@
+from django.db.models import query
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.utils import serializer_helpers
@@ -110,6 +111,9 @@ def conteo_asistencias(request):
         cantidad = Asistencia.objects.all().count()
         return JsonResponse(cantidad,safe=False)
     return JsonResponse(0,safe=False)
+class AsistenciaViewCreateSet(generics.CreateAPIView):
+    query = Asistencia.objects.all()
+    serializer_class = AsistenciaSerializer
 
 class AsistenciaViewSet(generics.CreateAPIView):
     queryset = Asistencia.objects.all()

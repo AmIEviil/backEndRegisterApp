@@ -17,6 +17,7 @@ urlpatterns =[
     url(r'^api/asistencia/$',views.AsistenciaViewSet.as_view()),
     url(r'^api/asistencia_l/$',views.AsistenciaListarViewSet.as_view()),
     url(r'^api/conteo/$',views.conteo_asistencias),
+    url(r'^api/asist/$',views.AsistenciaViewCreateSet.as_view()),
 ]
 
 urlpatterns= format_suffix_patterns(urlpatterns)
